@@ -23,3 +23,21 @@ def test_p1_p1_p1():
     assert QuadraticEquationSolver(1, 1, 1).solve() == []
 
 
+def test_p1_p1_n1():
+    assert QuadraticEquationSolver(1, 1, -1).solve() == [
+        approx(-0.5 + 5**0.5 * 0.5),
+        approx(-0.5 - 5**0.5 * 0.5),
+    ]
+
+
+def test_p1_n1_p1():
+    assert QuadraticEquationSolver(1, -1, 1).solve() == []
+
+
+def test_p1_n1_n1():
+    assert QuadraticEquationSolver(1, -1, -1).solve() == [
+        approx(+0.5 - 5**0.5 * 0.5),
+        approx(+0.5 - 5**0.5 * 0.5),
+    ]
+
+
